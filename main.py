@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile
 from fastapi.responses import FileResponse
 
 
@@ -11,3 +11,7 @@ async def get_image():
 
 
 
+@app.post("/post_image")
+async def post_image(file: UploadFile ):
+    return {"filename": file.filename}
+    
