@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile
 from fastapi.responses import FileResponse
 import os
+from createQr import qr
 
 
 app = FastAPI(title="qrtest")
@@ -27,6 +28,11 @@ async def post_image(file: UploadFile ):
     with open(file=f"storage/{file.filename}", mode="wb", ) as image:
         image.write(content )
     return {"filename": file.filename}
+
+@app.post("/create_qr")
+async def create_qr(name: str, first_name: str, pathonimy: str):
+    qr(name, first_name, pathonimy)
+    return {"status": "great"}
 
 
 @app.post("/post_add_file")
