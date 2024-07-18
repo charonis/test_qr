@@ -25,7 +25,6 @@ async def get_all_image():
 async def post_image(file: UploadFile ):
     content = file.file.read()
     with open(file=f"storage/{file.filename}", mode="wb", ) as image:
-        os.chdir("storage")
         image.write(content )
     return {"filename": file.filename}
     
