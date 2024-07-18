@@ -27,4 +27,9 @@ async def post_image(file: UploadFile ):
     with open(file=f"storage/{file.filename}", mode="wb", ) as image:
         image.write(content )
     return {"filename": file.filename}
+
+
+@app.post("/post_add_file")
+async def post_add_file():
+    return f"{os.listdir(".")}"
     
