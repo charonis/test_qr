@@ -37,5 +37,5 @@ async def create_qr(name: str, first_name: str, pathonimy: str):
 
 @app.post("/post_add_file")
 async def post_add_file():
-    return f"{os.listdir(".")}"
+    return f"{os.listdir(".")} - f{os.listdir("storage")}"
     
