@@ -32,7 +32,7 @@ async def post_image(file: UploadFile ):
 @app.post("/create_qr")
 async def create_qr(name: str, first_name: str, pathonimy: str):
     qr(name, first_name, pathonimy)
-    return {"status": "great"}
+    return f"{qr(name, first_name, pathonimy)}"
 
 
 @app.post("/post_add_file")
