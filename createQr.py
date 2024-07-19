@@ -6,4 +6,4 @@ def qr(name: str, first_name: str, pathonimy: str):
     # filename = f"{name}_{first_name}-{pathonimy}.png"
     # img = qrcode.make(data)
     # img.save(f"storage/{filename}")
-    print(name + first_name + pathonimy)
+    return f"{name}_{first_name}_{pathonimy}"
