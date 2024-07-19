@@ -39,4 +39,3 @@ async def post_add_file():
     return f"{os.listdir(".")} - f{os.listdir("storage")}"
     
 
-# print(qr("haha", "hsdlf", "lsfdjls"))
